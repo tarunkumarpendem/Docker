@@ -15,6 +15,7 @@ pipeline{
                 sh 'docker image build -t jenkins:1.0 .'
                 sh 'docker container run -d -P --name Jenkins jenkins:1.0'
                 sh 'docker container ls -a'
+                sh 'cat /var/jenkins_home/secrets/initialAdminPassword'
             }
         }
     }
