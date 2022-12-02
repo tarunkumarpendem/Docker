@@ -11,6 +11,7 @@ pipeline{
         }
         stage(docker_stage){
             steps{
+                sh 'docker info'
                 sh 'cd /Docker'
                 sh 'docker image build -t jenkins:1.0 .'
                 sh 'docker container run -d -P --name Jenkins jenkins:1.0'
