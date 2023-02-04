@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::682574356252:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/A4E61189AAD87EC67D6433BEB260D3FD"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.us-east-1.amazonaws.com/id/A4E61189AAD87EC67D6433BEB260D3FD:aud": "sts.amazonaws.com",
+          "oidc.eks.us-east-1.amazonaws.com/id/A4E61189AAD87EC67D6433BEB260D3FD:sub": "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+        }
+      }
+    }
+  ]
+}
