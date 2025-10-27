@@ -1,4 +1,4 @@
-FROM mysql:8.0.31
+FROM mysql:8.4.7
 LABEL Author = Tarun
 LABEL Version = 15
 EXPOSE 3306
